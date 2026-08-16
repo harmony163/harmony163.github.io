@@ -3,308 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت شخصی من</title>
+    <title>پرتال سلامت و زیست‌شناسی</title>
     <style>
-        /* ===== استایل کلی ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Vazir', Tahoma, sans-serif;
-            background: #f8fafc;
+            font-family: Tahoma, sans-serif;
+            background: #f0f4f8;
             color: #2d3748;
             line-height: 1.8;
         }
         a {
             text-decoration: none;
-            color: #2563eb;
+            color: #2b6cb0;
         }
         .container {
             max-width: 1000px;
             margin: auto;
-            padding: 20px;
+            padding: 15px;
         }
-
-        /* ===== منوی بالای سایت ===== */
         header {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            max-width: 1000px;
-            margin: auto;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #2563eb;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        /* ===== بخش معرفی (Hero) ===== */
-        .hero {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: #2c3e50;
             color: white;
-            padding: 80px 20px;
+            padding: 15px 0;
             text-align: center;
         }
-        .hero h1 {
-            font-size: 2.5em;
+        header h1 {
+            font-size: 1.8em;
+        }
+        nav {
+            background: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ecf0f1;
+            margin: 0 10px;
+            font-size: 0.95em;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            background: #2c3e50;
+            border-radius: 5px;
+        }
+        .hero {
+            background: #2980b9;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2em;
             margin-bottom: 10px;
         }
-        .hero p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        /* ===== بخش درباره من ===== */
         .section {
             background: white;
-            margin: 30px 0;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .section h2 {
-            color: #1e293b;
-            border-right: 4px solid #2563eb;
-            padding-right: 12px;
-            margin-bottom: 20px;
-            font-size: 1.6em;
+            border-right: 4px solid #2980b9;
+            padding-right: 10px;
+            margin-bottom: 15px;
+            color: #1a202c;
         }
-        .about-content {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
-        .about-text {
-            flex: 1;
-            min-width: 250px;
+        .card {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
         }
-
-        /* ===== مهارت‌ها ===== */
-        .skills {
+        .card h3 {
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        .tag {
+            display: inline-block;
+            background: #bee3f8;
+            color: #2b6cb0;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            margin: 3px 0;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background: #2980b9;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #1a5276;
+        }
+        .pillar {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
-        .skill-tag {
-            background: #e0e7ff;
-            color: #3730a3;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
+        .pillar-item {
+            background: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            flex: 1 1 180px;
+            text-align: center;
+            border-right: 3px solid #2980b9;
         }
-
-        /* ===== نمونه‌کارها ===== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .portfolio-card {
-            background: #f8fafc;
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .portfolio-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-        }
-        .portfolio-card h3 {
-            color: #1e293b;
-            margin-bottom: 5px;
-        }
-        .portfolio-card p {/* ===== وبلاگ ===== */
-        .blog-post {
-            padding: 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .blog-post:last-child {
-            border-bottom: none;
-        }
-        .blog-post h3 {
-            margin-bottom: 5px;
-        }
-        .blog-post h3 a {
-            color: #1e293b;
-        }
-        .blog-post .date {
-            font-size: 0.85em;
-            color: #718096;
-        }
-
-        /* ===== تماس ===== */
-        .contact-btn {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            margin-top: 15px;
-            transition: background 0.2s;
-        }
-        .contact-btn:hover {
-            background: #1d4ed8;
-        }
-
-        /* ===== فوتر ===== */
         footer {
             text-align: center;
-            padding: 25px;
-            background: #1e293b;
-            color: #cbd5e1;
-            margin-top: 40px;
+            padding: 20px;
+            background: #2c3e50;
+            color: #bdc3c7;
+            margin-top: 30px;
         }
-        footer a {
-            color: #93c5fd;
-        }
-
-        /* ===== ریسپانسیو (موبایل) ===== */
         @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
+            header h1 {
+                font-size: 1.4em;
             }
-            .hero h1 {
-                font-size: 1.8em;
+            .hero h2 {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- منوی بالای سایت -->
     <header>
-        <nav>
-            <div class="logo">🚀 نام شما</div>
-            <ul class="nav-links">
-                <li><a href="#about">درباره من</a></li>
-                <li><a href="#portfolio">نمونه‌کارها</a></li>
-                <li><a href="#blog">وبلاگ</a></li>
-                <li><a href="#contact">تماس</a></li>
-            </ul>
-        </nav>
+        <h1>🧬 زیست‌آگاهی | سلامت و دانش</h1>
     </header>
 
-    <!-- بخش معرفی اصلی -->
-    <section class="hero">
-        <h1>سلام! من [نام شما] هستم</h1>
-        <p>طراح، برنامه‌نویس و علاقه‌مند به [حوزه شما]</p>
+    <nav>
+        <a href="#biology">زیست‌شناسی</a>
+        <a href="#disease">بیماری‌ها</a>
+        <a href="#treatment">درمان و دارو</a>
+        <a href="#traditional">طب سنتی</a>
+        <section class="hero">
+        <h2>🔬 مرجع تخصصی سلامت</h2>
+        <p>از سلول تا بالین – زیست‌شناسی مولکولی، بیماری‌ها، داروها، طب سنتی و پرستاری</p>
     </section>
 
     <div class="container">
 
-        <!-- درباره من -->
-        <section id="about" class="section">
-            <h2>👨‍💻 درباره من</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        اینجا یک متن کوتاه درباره خودتان بنویسید. مثلاً تحصیلات، علاقه‌مندی‌ها،
-                        یا داستان شروع کارتان. این بخش مهم‌ترین جایی است که مخاطب با شما آشنا می‌شود.
-                    </p>
-                    <p>
-                        می‌توانید دوستانه و صمیمی بنویسید تا حس اعتماد ایجاد کند.
-                    </p>
+        <!-- زیست‌شناسی -->
+        <section id="biology" class="section">
+            <h2>🧪 زیست‌شناسی سلولی و مولکولی</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>غشای سلولی</h3>
+                    <span class="tag">سلول</span>
+                    <p>دولایه فسفولیپیدی با پروتئین‌های غشایی برای انتقال مواد و سیگنال‌دهی</p>
                 </div>
-                <div class="skills">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">طراحی</span>
-                    <span class="skill-tag">فتوشاپ</span>
+                <div class="card">
+                    <h3>همانندسازی DNA</h3>
+                    <span class="tag">ژنتیک</span>
+                    <p>فرایند نیمه‌حفاظتی با آنزیم DNA پلیمراز و سیستم ترمیم خطا</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- رزومه و نمونه‌کارها -->
-        <section id="portfolio" class="section">
-            <h2>💼 نمونه‌کارها</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>پروژه اول</h3>
-                    <p>توضیح کوتاهی درباره این پروژه بنویسید و نتیچه یا لینک آن را قرار دهید.</p>
+                <div class="card">
+                    <h3>آپوپتوز</h3>
+                    <span class="tag">سلول</span>
+                    <p>مرگ برنامه‌ریزی شده سلول برای حذف سلول‌های آسیب‌دیده</p>
                 </div>
-                <div class="portfolio-card">
-                    <h3>پروژه دوم</h3>
-                    <p>توضیح کوتاهی درباره این پروژه بنویسید و نتیچه یا لینک آن را قرار دهید.</p>
-                </div>
-                <div class="portfolio-card">
-                    <h3>پروژه سوم</h3>
-                    <p>توضیح کوتاهی درباره این پروژه بنویسید و نتیچه یا لینک آن را قرار دهید.</p>
+                <div class="card">
+                    <h3>مسیرهای سیگنالینگ</h3>
+                    <span class="tag">مولکول</span>
+                    <p>MAPK، Wnt، PI3K – هدف بسیاری از داروهای ضد سرطان</p>
                 </div>
             </div>
         </section>
 
-        <!-- وبلاگ -->
-        <section id="blog" class="section"><h2>✍️ وبلاگ</h2>
-            <div class="blog-post">
-                <h3><a href="#">عنوان اولین پست وبلاگ</a></h3>
-                <div class="date">۱۴۰۳/۰۵/۲۰</div>
-                <p>چند خط اول پست برای جذب مخاطب...</p>
-            </div>
-            <div class="blog-post">
-                <h3><a href="#">عنوان دومین پست وبلاگ</a></h3>
-                <div class="date">۱۴۰۳/۰۵/۱۵</div>
-                <p>خلاصه کوتاهی از این مطلب...</p>
-            </div>
-            <div class="blog-post">
-                <h3><a href="#">عنوان سومین پست وبلاگ</a></h3>
-                <div class="date">۱۴۰۳/۰۵/۰۸</div>
-                <p>چرا شروع کردم؟ این پست درباره انگیزه من است...</p>
+        <!-- بیماری‌ها -->
+        <section id="disease" class="section">
+            <h2>🦠 بیماری‌ها</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>دیابت نوع 2</h3>
+                    <span class="tag">متابولیک</span>
+                    <p>مقاومت به انسولین – درمان با متفورمین، رژیم و ورزش</p>
+                </div>
+                <div class="card">
+                    <h3>سرطان ریه</h3>
+                    <span class="tag">انکولوژی</span>
+                    <p>جهش در EGFR، KRAS – درمان با داروهای هدفمند و ایمونوتراپی</p>
+                </div>
+                <div class="card">
+                    <h3>آلزایمر</h3>
+                    <span class="tag">اعصاب</span>
+                    <p>تجمع آمیلوئید بتا – درمان علامتی با دونپزیل</p>
+                </div>
+                <div class="card">
+                    <h3>COVID-19</h3>
+                    <span class="tag">عفونی</span>
+                    <p>کروناویروس – واکسن mRNA و داروی پکسلووید</p>
+                </div>
             </div>
         </section>
 
-        <!-- تماس و معرفی کسب‌وکار -->
-        <section id="contact" class="section">
-            <h2>📞 تماس با من</h2>
-            <p>می‌توانید برای همکاری، پروژه، یا هر سوالی با من در ارتباط باشید.</p>
-            <a href="mailto:your@email.com" class="contact-btn">ارسال ایمیل</a>
-            <p style="margin-top: 15px;">
-                <a href="#">اینستاگرام</a> | 
-                <a href="#">لینکدین</a> | 
-                <a href="#">تلگرام</a>
-            </p>
+        <!-- درمان و دارو -->
+        <section id="treatment" class="section">
+            <h2>💊 درمان و داروها</h2>
+            <div class="pillar">
+                <div class="pillar-item">
+                    <h4>آنتی‌بیوتیک‌ها</h4>
+                    <p>آموکسی‌سیلین، سیپروفلوکساسین</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>ضدالتهاب‌ها</h4>
+                    <p>ایبوپروفن، کورتیکواستروئید</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>شیمی‌درمانی</h4>
+                    <p>سیس‌پلاتین، وین‌کریستین</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>داروهای هدفمند</h4>
+                    <p>ایماتینیب، تراستوزوماب</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- طب سنتی -->
+        <section id="traditional" class="section">
+            <h2>🌿 طب سنتی و گیاهی</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>زنجبیل</h3>
+                    <span class="tag">ضدالتهاب</span>
+                    <p>جینجرول – کاهش تهوع و درد مفاصل</p>
+                </div>
+                <div class="card">
+                    <h3>زردچوبه</h3>
+                    <span class="tag">آنتی‌اکسیدان</span>
+                    <p>کورکومین – مهار التهاب و رشد تومور</p>
+                </div>
+                <div class="card">
+                    <h3>خارمریم</h3>
+                    <span class="tag">کبد</span>
+                    <p>سیلیمارین – محافظ کبد در کبد چرب</p>
+                </div>
+                <div class="card">
+                    <h3>سنبل‌الطیب</h3>
+                    <span class="tag">آرامبخش</span>
+                    <p>کاهش اضطراب و بهبود خواب</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- پرستاری -->
+        <section id="nursing" class="section">
+            <h2>👩‍⚕️ پرستاری</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>زخم فشاری</h3>
+                    <span class="tag">مراقبت</span>
+                    <p>تغییر پوزیشن هر 2 ساعت و پانسمان مدرن</p>
+                </div>
+                <div class="card">
+                    <h3>مدیریت درد</h3>
+                    <span class="tag">درد</span>
+                    <p>مسکن‌ها بر اساس نردبان WHO</p>
+                </div>
+                <div class="card">
+                    <h3>تهویه مکانیکی</h3>
+                    <span class="tag">ICU</span>
+                    <p>مراقبت از بیماران با ونتیلاتور</p>
+                </div>
+                <div class="card">
+                    <h3>گزارش SOAP</h3>
+                    <span class="tag">مستندسازی</span>
+                    <p>ثبت وضعیت بیمار به روش استاندارد</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- تماس -->
+        <section id="contact" class="section" style="text-align:center;">
+            <h2>📬 تماس</h2>
+            <p>ایمیل: info@zistaghahi.ir</p>
+            <p>تلگرام | اینستاگرام | لینکدین</p>
+            <a href="mailto:info@zistaghahi.ir" class="btn">ارسال پیام</a>
         </section>
 
     </div>
 
-    <!-- فوتر -->
     <footer>
-        <p>© ۱۴۰۳ [نام شما] | ساخته شده با ❤️</p>
+        <p>© ۱۴۰۴ زیست‌آگاهی | مطالب با استناد علمی</p>
     </footer>
 
 </body>
 </html>
-            font-size: 0.9em;
-            color: #4a5568;
-        }
+
+        <a href="#nursing">پرستاری</a>
+        <a href="#contact">تماس</a>
+    </nav>
